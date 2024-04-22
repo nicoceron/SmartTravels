@@ -1,16 +1,18 @@
 package com.example.smarttravels
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var packagesRecyclerView: androidx.recyclerview.widget.RecyclerView
     private lateinit var bestForYouRecyclerView: androidx.recyclerview.widget.RecyclerView
-
+    private lateinit var navigationView: NavigationView
     private lateinit var packageAdapter: PackageAdapter
     private lateinit var bestForYouAdapter: BestForYouAdapter
 
@@ -59,6 +61,29 @@ class MainActivity : AppCompatActivity() {
         val searchEditText = findViewById<AutoCompleteTextView>(R.id.searchEditText)
         searchEditText.setAdapter(adapter)
         searchEditText.threshold = 1
+
+        navigationView = findViewById(R.id.navigationView)
+
+        navigationView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.nav_home -> {
+                    // Acción para el item Home no hacer nada
+                    true
+                }
+                R.id.nav_profile -> {
+                    // Acción para el item Profile
+                    val intent = Intent(this, ProfileActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.nav_logout -> {
+                    // Acción para el item Logout
+                    // Aquí puedes implementar el código para cerrar sesión
+                    true
+                }
+                else -> false
+            }
+        }
 
     }
 }
