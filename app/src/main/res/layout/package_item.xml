@@ -30,6 +30,6 @@
         android:textStyle="bold"
         android:textColor="@android:color/white" /> <!-- Color de texto blanco -->
 
-</LinearLayout>
+    </LinearLayout>
 
-    </FrameLayout>
+</FrameLayout>

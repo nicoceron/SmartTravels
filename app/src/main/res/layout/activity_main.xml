@@ -83,12 +83,7 @@
             <com.google.android.material.tabs.TabItem
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="Packages" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Services" />
+                android:text="Paquetes Publicados" />
 
         </com.google.android.material.tabs.TabLayout>
 
