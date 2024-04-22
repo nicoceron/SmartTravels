@@ -1,5 +1,7 @@
 package com.example.smarttravels
 
+import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class PackageAdapter(private val packages: List<Package>) :
+class PackageAdapter(private val packages: List<Package>, private val context: Context) :
     RecyclerView.Adapter<PackageAdapter.PackageViewHolder>() {
 
     class PackageViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -28,6 +30,13 @@ class PackageAdapter(private val packages: List<Package>) :
         Glide.with(holder.packageImage)
             .load(packageItem.imageUrl)
             .into(holder.packageImage)
+        holder.itemView.setOnClickListener {
+            // Aquí puedes iniciar la nueva actividad
+            val intent = Intent(context, DetallePackageActivity::class.java)
+            // Puedes añadir datos adicionales al intent si es necesario
+            intent.putExtra("packageId", packageItem.id)
+            context.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {
