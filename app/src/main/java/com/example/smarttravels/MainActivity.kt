@@ -59,5 +59,6 @@ class MainActivity : AppCompatActivity() {
         val searchEditText = findViewById<AutoCompleteTextView>(R.id.searchEditText)
         searchEditText.setAdapter(adapter)
         searchEditText.threshold = 1
+
     }
 }
