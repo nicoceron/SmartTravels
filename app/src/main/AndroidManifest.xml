@@ -32,7 +32,9 @@
         <activity
             android:name=".ProfileActivity"
             android:exported="true" />
-
+        <activity
+            android:name=".DetallePackageActivity"
+            android:exported="true"/>
     </application>
 
 </manifest>

@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         // Inicializar los adaptadores
-        packageAdapter = PackageAdapter(packages)
+        packageAdapter = PackageAdapter(packages,this)
         bestForYouAdapter = BestForYouAdapter(bestForYouItems)
 
         // Configurar el RecyclerView para paquetes
