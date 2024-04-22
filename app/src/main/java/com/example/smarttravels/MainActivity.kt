@@ -37,10 +37,10 @@ class MainActivity : AppCompatActivity() {
 
         // Datos de ejemplo para "Best for you"
         val bestForYouItems = listOf(
-            BestForYouAdapter.BestForYouItem("Aventura Pura Vida", "https://picsum.photos/200/300?random=2", "Rp. 2.500.000.000 / Year", "~ 6 People"),
-            BestForYouAdapter.BestForYouItem("Escape Romántico", "https://picsum.photos/200/300?random=1", "Rp. 2.000.000.000 / Year", "~ 2 People"),
-            BestForYouAdapter.BestForYouItem("Volcanes Vivos", "https://picsum.photos/200/300?random=3", "Rp. 500.000.000 / Year", "~ 2 People"),
-            BestForYouAdapter.BestForYouItem("Sabor Local", "https://picsum.photos/200/300?random=4", "Rp. 900.000.000.000 / Year", "~ 5 People"),
+            BestForYouAdapter.BestForYouItem("Aventura Pura Vida", "https://picsum.photos/200/300?random=2", "Rp. 2.500.000.000 / Year", "~ 6 Personas"),
+            BestForYouAdapter.BestForYouItem("Escape Romántico", "https://picsum.photos/200/300?random=1", "Rp. 2.000.000.000 / Year", "~ 2 Personas"),
+            BestForYouAdapter.BestForYouItem("Volcanes Vivos", "https://picsum.photos/200/300?random=3", "Rp. 500.000.000 / Year", "~ 2 Personas"),
+            BestForYouAdapter.BestForYouItem("Sabor Local", "https://picsum.photos/200/300?random=4", "Rp. 900.000.000.000 / Year", "~ 5 Personas"),
             // ... más ítems
         )
 
@@ -67,7 +67,6 @@ class MainActivity : AppCompatActivity() {
         navigationView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.nav_home -> {
-                    // Acción para el item Home no hacer nada
                     true
                 }
                 R.id.nav_profile -> {
@@ -79,6 +78,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_logout -> {
                     // Acción para el item Logout
                     // Aquí puedes implementar el código para cerrar sesión
+
                     true
                 }
                 else -> false
