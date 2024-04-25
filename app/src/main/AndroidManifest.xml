@@ -16,6 +16,9 @@
 
         <!-- Actividad Login como actividad principal -->
         <activity
+            android:name=".TourPackageActivity"
+            android:exported="false" />
+        <activity
             android:name=".Login"
             android:exported="true">
             <intent-filter>
