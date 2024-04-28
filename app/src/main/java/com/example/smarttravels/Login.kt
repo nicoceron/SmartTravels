@@ -26,7 +26,5 @@ class Login : AppCompatActivity() {
             // Finalizar la actividad actual (opcional, dependiendo de tu flujo de navegación)
             finish()
         }
-
-        // Resto de tu código...
     }
 }

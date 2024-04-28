@@ -11,7 +11,7 @@
     <!-- Barra Lateral -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"
-        android:layout_width="103dp"
+        android:layout_width="118dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@android:color/holo_blue_light"
@@ -25,7 +25,7 @@
     <!-- Contenido Principal -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/mainContent"
-        android:layout_width="300dp"
+        android:layout_width="280dp"
         android:layout_height="match_parent"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,7 +40,7 @@
             android:id="@+id/packageImage"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/placeholder"
+            android:src="@drawable/sunset"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/nameText"
             app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
             android:id="@+id/nameText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Nombre"
+            android:text="Nombre: Caminata en la playa"
             app:layout_constraintTop_toBottomOf="@+id/packageImage"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +63,7 @@
             android:id="@+id/ageText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Descripción: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            android:text="Descripción: Sumérgete en la belleza natural de Costa Rica con Pura Vida Explora, la aplicación definitiva para los amantes de la aventura y la naturaleza. Descubre la auténtica Costa Rica a través de caminatas guiadas en las playas más espectaculares del país."
             app:layout_constraintTop_toBottomOf="@+id/nameText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

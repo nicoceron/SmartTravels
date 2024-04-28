@@ -4,28 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    android:background="@color/white"
     android:padding="0dp"
-    android:background="@color/white">
+    tools:context=".MainActivity">
 
     <!-- Barra Lateral -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"
-        android:layout_width="103dp"
+        android:layout_width="118dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="@android:color/holo_blue_light"
+        app:itemIconTint="@android:color/white"
+        app:itemTextColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/nav_menu"
-        app:itemTextColor="@android:color/white"
-        app:itemIconTint="@android:color/white"/>
+        app:menu="@menu/nav_menu" />
 
     <!-- Contenido Principal -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/mainContent"
-        android:layout_width="300dp"
+        android:layout_width="280dp"
         android:layout_height="match_parent"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -33,63 +33,109 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@id/navigationView"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="1.0">
 
-        <!-- Imagen de perfil -->
-        <ImageView
-            android:id="@+id/profileImage"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/placeholder"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/nameText"
-            app:layout_constraintStart_toStartOf="parent"
+        <RelativeLayout
+            android:id="@+id/top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:background="@android:color/holo_blue_dark"
+            app:layout_constraintBottom_toTopOf="@id/title"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Campo de texto para nombre -->
+            <RelativeLayout
+                android:id="@+id/profile_bar"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginVertical="10dp">
+
+                <!-- Imagen de perfil -->
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/profile"
+
+                    app:shapeAppearanceOverlay="@style/ImageStyle_Circle" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/pickimage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="-5dp"
+                    android:src="@drawable/add_a_photo_white"
+                    app:fabCustomSize="35dp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+        <!--titulo-->
+        <TextView
+            android:id="@+id/title"
+            style="@style/TextAppearance.Material3.TitleMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="20dp"
+            android:text="Editar Perfil"
+            app:layout_constraintBottom_toTopOf="@id/nameText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_bar" />
+        <!--    nombre  -->
         <TextView
             android:id="@+id/nameText"
+            style="@style/TextAppearance.Material3.BodyLarge"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Nombre"
-            app:layout_constraintTop_toBottomOf="@+id/profileImage"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp"
+            android:text="Nombre: Sophia Ramirez"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title" />
 
         <!-- Texto de edad -->
         <TextView
             android:id="@+id/ageText"
+
+            style="@style/TextAppearance.Material3.BodyLarge"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="Edad: 25"
-            app:layout_constraintTop_toBottomOf="@+id/nameText"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nameText" />
 
         <!-- Texto de nacionalidad -->
         <TextView
             android:id="@+id/nationalityText"
+
+            style="@style/TextAppearance.Material3.BodyLarge"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="Nacionalidad: Mexicana"
-            app:layout_constraintTop_toBottomOf="@+id/ageText"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ageText" />
 
         <!-- Texto de correo -->
         <TextView
             android:id="@+id/emailText"
+
+            style="@style/TextAppearance.Material3.BodyLarge"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="Correo: ejemplo@correo.com"
-            app:layout_constraintTop_toBottomOf="@+id/nationalityText"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="8dp"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/nationalityText" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

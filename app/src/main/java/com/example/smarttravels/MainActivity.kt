@@ -75,6 +75,12 @@ class MainActivity : AppCompatActivity() {
                     startActivity(intent)
                     true
                 }
+                R.id.nav_package -> {
+                    // Acción para el item Package
+                    val intent = Intent(this, TourPackageActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
                 R.id.nav_logout -> {
                     // Acción para el item Logout
                     // Aquí puedes implementar el código para cerrar sesión
