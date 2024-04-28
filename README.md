@@ -1,4 +1,4 @@
-# Tourism Package Configurator App
+# Tourism Package App
 
 This Android application, built using Android Studio, is designed to streamline the process of configuring tourism packages. The app facilitates the efficient management of services and experiences offered by a multitude of players in the tourism industry.
 
